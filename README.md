@@ -1,8 +1,6 @@
 # Application de gestion de compte bancaire
 
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)  [![forthebadge]
-
 Le but de cet Application  consiste à implémenter une application web Java EE permettant la gestion de comptes bancaires permettant à l’utilisateur de créer un profil  et de pouvoir le gérer à travers divers fonctionnalités offerte par l’application.
 
 ## Pour commencer
