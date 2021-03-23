@@ -49,7 +49,7 @@ CREATE TABLE `Beneficiary` (
   `Acc_no` bigint(20) DEFAULT NULL,
   `Name` varchar(225) DEFAULT NULL,
   `BankName` varchar(225) DEFAULT NULL,
-  `IFSCCOde` varchar(225) DEFAULT NULL,
+  `IBAN` varchar(225) DEFAULT NULL,
   `UserId` bigint(20) DEFAULT NULL,
   `created_by` varchar(225) DEFAULT NULL,
   `modified_by` varchar(225) DEFAULT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `Beneficiary` (
 
 /*Data for the table `Beneficiary` */
 
-insert  into `Beneficiary`(`ID`,`Acc_no`,`Name`,`BankName`,`IFSCCOde`,`UserId`,`created_by`,`modified_by`,`created_datetime`,`modified_datetime`) values (1,123456789,'Hari','Bank Of India','BKID5555',4,'Demo123','Demo123','2021-02-17 10:29:32','2021-02-17 10:29:32');
+insert  into `Beneficiary`(`ID`,`Acc_no`,`Name`,`BankName`,`IBAN`,`UserId`,`created_by`,`modified_by`,`created_datetime`,`modified_datetime`) values (1,123456789,'Hari','Bank Of India','BKID5555',4,'Demo123','Demo123','2021-02-17 10:29:32','2021-02-17 10:29:32');
 
 /*Table structure for table `Customer` */
 

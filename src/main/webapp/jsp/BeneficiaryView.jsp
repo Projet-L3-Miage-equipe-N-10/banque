@@ -93,6 +93,12 @@
 								<font color="red"><%=ServletUtility.getErrorMessage("bName", request)%></font>
 							</div>
 							
+							<div class="form-group">
+								<input type="text" class="form-control"  name="iban"
+									placeholder="IBAN"
+									value="<%=DataUtility.getStringData(bean.getBankName())%>">
+								<font color="red"><%=ServletUtility.getErrorMessage("iban", request)%></font>
+							</div>
 							
 
 							<input type="submit" name="operation"

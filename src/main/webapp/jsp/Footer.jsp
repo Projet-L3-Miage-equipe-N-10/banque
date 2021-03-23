@@ -12,12 +12,14 @@
     background-color: #459db1;
     min-height: 30px;
     width: 100%;
+  
 }
 .copyright {
     color: #fff;
     line-height: 30px;
     min-height: 30px;
     padding: 7px 0;
+      position : fixed ;
 }
 .design {
     color: #fff;
@@ -28,6 +30,10 @@
 }
 .design a {
     color: #fff;
+}
+footer {
+	display : table-row;
+	height: 100px; /* à titre d'exemple */
 }
 </style>
 </head>

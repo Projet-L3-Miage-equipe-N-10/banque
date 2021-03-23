@@ -29,6 +29,10 @@ public class BeneficiaryBean extends BaseBean {
 	 */
 	private long userId;
 	
+	// IFSC Code of Beneficiary
+	 
+	private String IBAN;
+	
 	
 	
 	
@@ -74,7 +78,14 @@ public class BeneficiaryBean extends BaseBean {
 		this.bankName = bankName;
 	}
 
-	
+	public String getIBAN() {
+		return IBAN;
+	}
+
+	public void setIBAN(String iBAN) {
+		IBAN = iBAN;
+	}
+
 
 	public String getKey() {
 		return null;

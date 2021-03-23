@@ -22,6 +22,13 @@ import com.octest.banque.util.JDBCDataSource;
 public class BeneficiaryModel {
 	private static Logger log = Logger.getLogger(BeneficiaryModel.class);
 
+	/**
+	 * NextPk a Beneficiary
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public Integer nextPK() throws DatabaseException {
 		log.debug("Model nextPK Started");
 		Connection conn = null;
@@ -44,6 +51,13 @@ public class BeneficiaryModel {
 		return pk + 1;
 	}
 
+	/**
+	 * Add a Beneficiary
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public long add(BeneficiaryBean bean) throws ApplicationException, DuplicateRecordException {
 		Connection conn = null;
 		int pk = 0;
@@ -62,6 +76,7 @@ public class BeneficiaryModel {
 			pstmt.setLong(2, bean.getAcc_No());
 			pstmt.setString(3,bean.getName());
 			pstmt.setString(4,bean.getBankName());
+			pstmt.setString(5,bean.getIBAN());
 			pstmt.setLong(6, bean.getUserId());
 			pstmt.setString(7, bean.getCreatedBy());
 			pstmt.setString(8, bean.getModifiedBy());
@@ -86,6 +101,13 @@ public class BeneficiaryModel {
 		return pk;
 	}
 
+	/**
+	 * Delete a Beneficiary
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public void delete(BeneficiaryBean bean) throws ApplicationException {
 
 		Connection conn = null;
@@ -112,6 +134,14 @@ public class BeneficiaryModel {
 
 	}
 
+	/**
+	 * Find Beneficiary by Name
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	public BeneficiaryBean findByName(String name) throws ApplicationException {
 		log.debug("Model findByLogin Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Beneficiary WHERE NAME=?");
@@ -128,6 +158,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIBAN(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -145,7 +176,15 @@ public class BeneficiaryModel {
 		log.debug("Model findByLogin End");
 		return bean;
 	}
-
+	
+	/**
+	 * Find Beneficiary by Pk
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	public BeneficiaryBean findByPK(long pk) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Beneficiary WHERE ID=?");
@@ -163,6 +202,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIBAN(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -181,6 +221,14 @@ public class BeneficiaryModel {
 		return bean;
 	}
 	
+	/**
+	 * Find Beneficiary by BeneficiaryNo
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	public BeneficiaryBean findByBeneficiaryNo(long pk) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Beneficiary WHERE Acc_No=?");
@@ -198,6 +246,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIBAN(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -216,6 +265,14 @@ public class BeneficiaryModel {
 		return bean;
 	}
 
+	/**
+	 * Find Beneficiary by UserId
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	public BeneficiaryBean findByUserId(long userId) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Beneficiary WHERE USerID=?");
@@ -233,6 +290,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIBAN(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -251,6 +309,12 @@ public class BeneficiaryModel {
 		return bean;
 	}
 
+	/**
+	 * Update a Beneficiary
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 */
 	public void update(BeneficiaryBean bean) throws ApplicationException, DuplicateRecordException {
 		log.debug("Model update Started");
 		Connection conn = null;
@@ -260,11 +324,12 @@ public class BeneficiaryModel {
 			conn = JDBCDataSource.getConnection();
 			conn.setAutoCommit(false); // Begin transaction
 			PreparedStatement pstmt = conn.prepareStatement(
-					"UPDATE Beneficiary SET ACC_NO=?,Name=?,BankName=?,userId=?,"
+					"UPDATE Beneficiary SET ACC_NO=?,Name=?,BankName=?,IFSCCode=?,userId=?,"
 							+ "CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=? WHERE ID=?");
 			pstmt.setLong(1, bean.getAcc_No());
 			pstmt.setString(2,bean.getName());
 			pstmt.setString(3,bean.getBankName());
+			pstmt.setString(4,bean.getIBAN());
 			pstmt.setLong(5, bean.getUserId());
 			pstmt.setString(6, bean.getCreatedBy());
 			pstmt.setString(7, bean.getModifiedBy());
@@ -289,10 +354,30 @@ public class BeneficiaryModel {
 		log.debug("Model update End");
 	}
 
+	/**
+	 * Search Beneficiary
+	 * 
+	 * @param bean
+	 *            : Search Parameters
+	 * @throws DatabaseException
+	 */
 	public List search(BeneficiaryBean bean) throws ApplicationException {
 		return search(bean, 0, 0);
 	}
 
+	/**
+	 * Search Beneficiary with pagination
+	 * 
+	 * @return list : List of Users
+	 * @param bean
+	 *            : Search Parameters
+	 * @param pageNo
+	 *            : Current Page No.
+	 * @param pageSize
+	 *            : Size of Page
+	 * 
+	 * @throws DatabaseException
+	 */
 	public List search(BeneficiaryBean bean, int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model search Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Beneficiary WHERE 1=1");
@@ -300,6 +385,10 @@ public class BeneficiaryModel {
 		if (bean != null) {
 			if (bean.getId() > 0) {
 				sql.append(" AND id = " + bean.getId());
+			}
+			
+			if (bean.getUserId() > 0) {
+				sql.append(" AND userId = " + bean.getUserId());
 			}
 
 			if (bean.getAcc_No() > 0) {
@@ -322,6 +411,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIBAN(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -342,10 +432,27 @@ public class BeneficiaryModel {
 		return list;
 	}
 
+	/**
+	 * Get List of Beneficiary
+	 * 
+	 * @return list : List of User
+	 * @throws DatabaseException
+	 */
 	public List list() throws ApplicationException {
 		return list(0, 0);
 	}
 
+	/**
+	 * Get List of Beneficiary with pagination
+	 * 
+	 * @return list : List of users
+	 * @param pageNo
+	 *            : Current Page No.
+	 * @param pageSize
+	 *            : Size of Page
+	 * @throws DatabaseException
+	 */
+	 
 	public List list(int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model list Started");
 		ArrayList list = new ArrayList();
@@ -365,6 +472,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIBAN(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -385,6 +493,3 @@ public class BeneficiaryModel {
 	}
 
 }
-
-
-	
