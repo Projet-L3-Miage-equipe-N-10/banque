@@ -26,6 +26,12 @@ import com.octest.banque.util.ServletUtility;
 @WebServlet(name = "ChangePasswordCtl", urlPatterns = { "/controller/ChangePasswordCtl" })
 public class ChangePasswordCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
+	
+	
+/*Le flux de contrôle est composé d'un Logger et Handler. Le premier est appelé par l'application pour prendre en 
+*charge le message à sauvegarder. Il le passe à Handler qui s'occupe de sauvegarder
+*physiquement le message sur un support précis (fichier, mémoire, socket, stream, console).
+*/
 
 	private static final Logger log = Logger.getLogger(ChangePasswordCtl.class);
 
@@ -35,8 +41,7 @@ public class ChangePasswordCtl extends BaseCtl {
 	/**
 	 * Validates input data entered by User
 	 * 
-	 * @param request
-	 * @return
+	 *
 	 */
 
 	@Override
@@ -77,8 +82,7 @@ public class ChangePasswordCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
+	 *
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -154,9 +158,9 @@ public class ChangePasswordCtl extends BaseCtl {
 	}
 
 	/**
-	 * Returns the VIEW page of this Controller
+	 *  Faire in forward vers la vue JSP
 	 * 
-	 * @return
+	 *
 	 */
 	@Override
 	protected String getView() {

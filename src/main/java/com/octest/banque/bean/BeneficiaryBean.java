@@ -29,7 +29,7 @@ public class BeneficiaryBean extends BaseBean {
 	 */
 	private long userId;
 	
-	// IFSC Code of Beneficiary
+	// IBAN  of Beneficiary
 	 
 	private String IBAN;
 	

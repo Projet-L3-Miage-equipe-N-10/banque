@@ -61,14 +61,13 @@ public abstract class BaseCtl extends HttpServlet
 
 
 	public BaseCtl() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	/**
 	 * Validate input Data Entered By User
 	 * 
-	 * @param request
-	 * @return 
+	 * 
 	 */
 
 	protected boolean validate(HttpServletRequest request) {

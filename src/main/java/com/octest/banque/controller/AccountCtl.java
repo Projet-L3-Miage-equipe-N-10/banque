@@ -2,33 +2,25 @@
 package com.octest.banque.controller;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
-
 import org.apache.log4j.Logger;
-
 import com.octest.banque.bean.AccountBean;
 import com.octest.banque.bean.BaseBean;
-import com.octest.banque.bean.UserBean;
 import com.octest.banque.exception.ApplicationException;
 import com.octest.banque.exception.DuplicateRecordException;
 import com.octest.banque.model.AccountModel;
-import com.octest.banque.model.UserModel;
 import com.octest.banque.util.DataUtility;
 import com.octest.banque.util.DataValidator;
 import com.octest.banque.util.PropertyReader;
 import com.octest.banque.util.ServletUtility;
 
 /**
- * Servlet implementation class AccountCtl
+ *  Servlet implementation class AccountCtl
  */
 
 @WebServlet(name = "Account", urlPatterns = { "/controller/AccountCtl" })
@@ -39,8 +31,8 @@ public class AccountCtl extends BaseCtl {
 	/**
 	 * Validate input Data Entered By Account
 	 * 
-	 * @param request
-	 * @return
+	 * 
+	 * 
 	 */
 
 	@Override
@@ -81,8 +73,8 @@ public class AccountCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
+	 *
+	 * 
 	 */
 
 	@Override

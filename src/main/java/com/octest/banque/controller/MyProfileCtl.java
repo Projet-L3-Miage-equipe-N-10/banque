@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-
+import com.octest.banque.controller.AccountCtl;
 import com.octest.banque.bean.BaseBean;
 import com.octest.banque.bean.UserBean;
 import com.octest.banque.exception.ApplicationException;
@@ -41,11 +41,10 @@ public class MyProfileCtl extends BaseCtl
 	
     private static Logger log=Logger.getLogger(MyProfileCtl.class);
         
-/**
+     /**
 	 * Validate input Data Entered By User
 	 * 
-	 * @param request
-	 * @return
+	
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -58,6 +57,10 @@ public class MyProfileCtl extends BaseCtl
 		if(OP_CHANGE_MY_PASSWORD.equalsIgnoreCase(op)||op==null){
 			return pass;
 		}
+		
+		
+		
+		
 		
 		String login = request.getParameter("login");
 		String dob = request.getParameter("dob");
@@ -101,11 +104,10 @@ public class MyProfileCtl extends BaseCtl
 		return pass;
 	}
 
-/**
+     /**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
+	 * 
 	 */
 
 	@Override
@@ -127,7 +129,7 @@ public class MyProfileCtl extends BaseCtl
 
 
 
-/**
+     /**
      * Display Concept for viewing profile page view
      *//*
 	*//**

@@ -29,8 +29,8 @@ public class BeneficiaryListCtl extends BaseCtl {
 	/**
 	* Populates bean object from request parameters
 	* 
-	* @param request
-	* @return
+	* 
+	* 
 	*/
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -45,10 +45,7 @@ public class BeneficiaryListCtl extends BaseCtl {
 	* Contains Display logics
 	*/
 
-	/**
-	* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	*      response)
-	*/
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("BeneficiaryListCtl doGet Start");
@@ -88,10 +85,7 @@ public class BeneficiaryListCtl extends BaseCtl {
 	*/
 	@Override
 
-	/**
-	* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	*      response)
-	*/
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -167,9 +161,9 @@ public class BeneficiaryListCtl extends BaseCtl {
 	}
 
 	/**
-	* Returns the VIEW page of this Controller
+	*  Faire in forward vers la vue JSP
 	* 
-	* @return
+	* 
 	*/
 	@Override
 	protected String getView() {

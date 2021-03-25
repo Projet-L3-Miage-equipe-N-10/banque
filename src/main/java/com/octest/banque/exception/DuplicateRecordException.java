@@ -6,6 +6,11 @@ package com.octest.banque.exception;
 public class DuplicateRecordException  extends Exception
 {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * @param msg
 	 *            error message
 	 */

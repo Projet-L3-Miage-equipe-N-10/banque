@@ -1,12 +1,14 @@
 package com.octest.banque.exception;
 
-/**
- * DatabaseException is propogated by DAO classes when an unhandled Database
- * exception occurred
- */
+
 
 public class DatabaseException  extends Exception
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
     * @param msg
     *            : Error message

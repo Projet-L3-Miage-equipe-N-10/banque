@@ -31,10 +31,7 @@
 .design a {
     color: #fff;
 }
-footer {
-	display : table-row;
-	height: 100px; /* à titre d'exemple */
-}
+
 </style>
 </head>
 <body>

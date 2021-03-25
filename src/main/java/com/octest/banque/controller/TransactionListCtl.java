@@ -35,8 +35,6 @@ public class TransactionListCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -53,10 +51,7 @@ public class TransactionListCtl extends BaseCtl {
 	 * Contains Display logics
 	 */
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("TransactionListCtl doGet Start");
@@ -111,10 +106,7 @@ public class TransactionListCtl extends BaseCtl {
 	 */
 	@Override
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -131,8 +123,8 @@ public class TransactionListCtl extends BaseCtl {
 		TransactionBean bean = (TransactionBean) populateBean(request);
 		
 		String op = DataUtility.getString(request.getParameter("operation"));
-		// get the selected checkbox ids array for delete list
 		
+		// get the selected checkbox ids array for delete list
 		String[] ids = request.getParameterValues("ids");
 		
 		TransactionModel model = new TransactionModel();
@@ -203,7 +195,7 @@ public class TransactionListCtl extends BaseCtl {
 	/**
 	 * Returns the VIEW page of this Controller
 	 * 
-	 * @return
+	 * 
 	 */
 	@Override
 	protected String getView() {

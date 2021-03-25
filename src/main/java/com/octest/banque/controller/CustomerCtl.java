@@ -39,8 +39,8 @@ public class CustomerCtl extends BaseCtl {
 	/**
 	 * Validate input Data Entered By Customer
 	 * 
-	 * @param request
-	 * @return
+	 * 
+	 * 
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -85,6 +85,7 @@ public class CustomerCtl extends BaseCtl {
 	protected BaseBean populateBean(HttpServletRequest request) {
 		log.debug("CustomerRegistrationCtl Method populatebean Started");
 		CustomerBean bean = new CustomerBean();
+		//Lire les donner de la requette 
 
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setName(DataUtility.getString(request.getParameter("name")));
@@ -110,10 +111,7 @@ public class CustomerCtl extends BaseCtl {
 	/**
 	 * Contains display logic
 	 */
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("CustomerRegistrationCtl Method doGet Started");
@@ -153,9 +151,9 @@ public class CustomerCtl extends BaseCtl {
 			throws ServletException, IOException {
 		System.out.println("in post method");
 		log.debug("CustomerRegistrationCtl Method doPost Started");
+		// stocker les données saisiee dans le model
 
 		String op = DataUtility.getString(request.getParameter("operation"));
-		// get model
 		CustomerModel model = new CustomerModel();
 
 		long id = DataUtility.getLong(request.getParameter("id"));
@@ -196,9 +194,9 @@ public class CustomerCtl extends BaseCtl {
 	}
 
 	/**
-	 * Returns the VIEW page of this Controller
+	 * Faire in forward vers la vue JSP
 	 * 
-	 * @return
+	 * 
 	 */
 	@Override
 	protected String getView() {

@@ -44,19 +44,14 @@ public class LoginCtl extends BaseCtl {
 
 	private static Logger log = Logger.getLogger(LoginCtl.class);
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public LoginCtl() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
 	 * Validate input Data Entered By User
 	 * 
-	 * @param request
-	 * @return
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -89,8 +84,6 @@ public class LoginCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -114,10 +107,7 @@ public class LoginCtl extends BaseCtl {
 	 * Display Login form
 	 * 
 	 */
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -166,10 +156,7 @@ public class LoginCtl extends BaseCtl {
 	 * Submit Logic
 	 */
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -227,7 +214,6 @@ public class LoginCtl extends BaseCtl {
 	/**
 	 * Returns the VIEW page of this Controller
 	 * 
-	 * @return
 	 */
 	@Override
 	protected String getView() {

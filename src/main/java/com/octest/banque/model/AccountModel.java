@@ -24,8 +24,6 @@ public class AccountModel {
 	/**
 	 * NextPk a Account
 	 * 
-	 * @param bean
-	 * @throws DatabaseException
 	 * 
 	 */
 	public Integer nextPK() throws DatabaseException {
@@ -53,8 +51,8 @@ public class AccountModel {
 	/**
 	 * Add a Account
 	 * 
-	 * @param bean
-	 * @throws DatabaseException
+	 * 
+	 * 
 	 * 
 	 */
 	public long add(AccountBean bean) throws ApplicationException, DuplicateRecordException {
@@ -104,8 +102,8 @@ public class AccountModel {
 	/**
 	 * Delete a Account
 	 * 
-	 * @param bean
-	 * @throws DatabaseException
+	 * 
+	 * 
 	 * 
 	 */
 	public void delete(AccountBean bean) throws ApplicationException {

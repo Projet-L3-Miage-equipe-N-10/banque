@@ -70,23 +70,9 @@
 									<font  color="red"><%=ServletUtility.getErrorMessage("mobileNo", request)%></font>
 							</div>
 							
-							<%
+							
 						
-							HashMap map = new HashMap();
-							map.put("Male", "Male");
-							map.put("Female", "Female");
-							%>
 							
-							<%-- <div class="form-group">
-								<%=HTMLUtility.getList("gender",String.valueOf(bean.getGender()), map)%> 
-									<font  color="red"><%=ServletUtility.getErrorMessage("gender", request)%></font>
-							</div>
-							
-							<div class="form-group">
-								<input type="text" class="form-control" id="datepicker" name="dob"
-									placeholder="Date Of Birth" value="<%=DataUtility.getDateString(bean.getDob())%>" > 
-									<font  color="red"><%=ServletUtility.getErrorMessage("dob", request)%></font>
-							</div> --%>
                     
             
         					<input type="submit" name="operation"

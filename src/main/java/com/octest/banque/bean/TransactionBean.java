@@ -97,12 +97,10 @@ public class TransactionBean extends BaseBean {
 	}
 
 	public String getKey() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public String getValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

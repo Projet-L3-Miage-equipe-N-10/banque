@@ -38,8 +38,7 @@ public class BeneficiaryCtl extends BaseCtl {
 	/**
 	 * Validate input Data Entered By Beneficiary
 	 * 
-	 * @param request
-	 * @return
+	 * 
 	 */
 
 	@Override
@@ -88,16 +87,15 @@ public class BeneficiaryCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
 	 */
 
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
 		log.debug("BeneficiaryRegistrationCtl Method populatebean Started");
 		BeneficiaryBean bean = new BeneficiaryBean();
-
-		bean.setId(DataUtility.getLong(request.getParameter("id")));
+		
+		//Lire les donner de la requette 
+        bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setAcc_No(DataUtility.getLong(request.getParameter("accNo")));
 		bean.setName(DataUtility.getString(request.getParameter("name")));
 		bean.setBankName(DataUtility.getString(request.getParameter("bName")));
@@ -125,7 +123,7 @@ public class BeneficiaryCtl extends BaseCtl {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("BeneficiaryRegistrationCtl Method doGet Started");
-
+		
 		String op = DataUtility.getString(request.getParameter("operation"));
 		BeneficiaryModel model = new BeneficiaryModel();
 		long id = DataUtility.getLong(request.getParameter("id"));
@@ -150,19 +148,14 @@ public class BeneficiaryCtl extends BaseCtl {
 	 * Contains submit logic
 	 */
 
-/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-
-  
   
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("in post method");
 		log.debug("BeneficiaryRegistrationCtl Method doPost Started");
-
-		String op = DataUtility.getString(request.getParameter("operation"));
+		
+		// stocker les données saisiee dans le model
+        String op = DataUtility.getString(request.getParameter("operation"));
 		BeneficiaryModel model = new BeneficiaryModel();
 
 		long id = DataUtility.getLong(request.getParameter("id"));
@@ -200,9 +193,9 @@ public class BeneficiaryCtl extends BaseCtl {
 	}
 
 	/**
-	 * Returns the VIEW page of this Controller
+	 * Faire in forward vers la vue JSP
 	 * 
-	 * @return
+	 * 
 	 */
 	@Override
 	protected String getView() {

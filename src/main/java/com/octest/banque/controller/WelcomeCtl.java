@@ -36,7 +36,7 @@ public class WelcomeCtl extends BaseCtl {
 
 	@Override
 	protected String getView() {
-		// TODO Auto-generated method stub
+	
 		return BSView.WELCOME_VIEW;
 	}
 

@@ -31,8 +31,6 @@ public class CustomerListCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -48,10 +46,6 @@ public class CustomerListCtl extends BaseCtl {
 	 * Contains Display logics
 	 */
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("CustomerListCtl doGet Start");
@@ -91,10 +85,6 @@ public class CustomerListCtl extends BaseCtl {
 	 */
 	@Override
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

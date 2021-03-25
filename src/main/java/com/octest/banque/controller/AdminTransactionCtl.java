@@ -40,8 +40,7 @@ public class AdminTransactionCtl extends BaseCtl {
 	/**
 	 * Validate input Data Entered By Transaction
 	 * 
-	 * @param request
-	 * @return
+	 *
 	 */
 
 	@Override
@@ -79,15 +78,15 @@ public class AdminTransactionCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
+	 * 
 	 */
 
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
 		log.debug("AdminTransactionCtl Method populatebean Started");
 		TransactionBean bean = new TransactionBean();
-
+		
+		//Lire les donner de la requette 
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setTransactionType(DataUtility.getString(request.getParameter("tType")));
 		bean.setTransactionAmount(DataUtility.getDouble(request.getParameter("tAmount")));
@@ -144,7 +143,8 @@ public class AdminTransactionCtl extends BaseCtl {
 			throws ServletException, IOException {
 		System.out.println("in post method");
 		log.debug("AdminTransactionCtl Method doPost Started");
-
+		
+		// stocker les données saisiee dans le model
 		String op = DataUtility.getString(request.getParameter("operation"));
 		TransactionModel model = new TransactionModel();
 
@@ -196,9 +196,8 @@ public class AdminTransactionCtl extends BaseCtl {
 	}
 
 	/**
-	 * Returns the VIEW page of this Controller
+	 *  Faire in forward vers la vue JSP
 	 * 
-	 * @return
 	 */
 	@Override
 	protected String getView() {

@@ -40,8 +40,6 @@ public class TransactionCtl extends BaseCtl {
 	/**
 	 * Validate input Data Entered By Transaction
 	 * 
-	 * @param request
-	 * @return
 	 */
 
 	@Override
@@ -67,8 +65,6 @@ public class TransactionCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
 	 */
 
 	@Override
@@ -88,17 +84,10 @@ public class TransactionCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-
-	/**
 	 * Contains display logic
 	 */
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -176,14 +165,7 @@ public class TransactionCtl extends BaseCtl {
 				
 				
 				acBean.setBalance(acBean.getBalance() - bean.getTransactionAmount());
-				
-				
-				//cBean.setBalance(cBean.getBalance() + bean.getTransactionAmount());
-				
-				
-				
-				//new AccountModel().update(cBean);
-				
+					
 				
 				new AccountModel().update(acBean);
 				
@@ -217,7 +199,7 @@ public class TransactionCtl extends BaseCtl {
 	/**
 	 * Returns the VIEW page of this Controller
 	 * 
-	 * @return
+	 * 
 	 */
 	@Override
 	protected String getView() {

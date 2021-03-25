@@ -2,7 +2,6 @@ package com.octest.banque.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +26,10 @@ import com.octest.banque.util.ServletUtility;
 
 @WebServlet(name = "AccountListCtl", urlPatterns = { "/controller/AccountListCtl" })
 public class AccountListCtl extends BaseCtl {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static Logger log = Logger.getLogger(AccountListCtl.class);
 	/**
 	 * Populates bean object from request parameters

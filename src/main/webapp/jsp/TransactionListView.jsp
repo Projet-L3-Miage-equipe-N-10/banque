@@ -96,7 +96,6 @@
 				<%
 				    int pageNo = ServletUtility.getPageNo(request);
 					int pageSize = ServletUtility.getPageSize(request);
-					int size=(int)request.getAttribute("size");
 					int index = ((pageNo - 1) * pageSize) + 1;
 					TransactionBean bean = null;
 					List list = ServletUtility.getList(request);
@@ -126,9 +125,7 @@
 						<%=(pageNo == 1) ? "disabled" : ""%>></td>
 						
 					
-					<td align="right"><input type="submit" name="operation" class="btn btn-primary pull-right" 
-						value="<%=TransactionListCtl.OP_NEXT%>"
-						<%=((list.size() < pageSize) || pageNo*pageSize==size) ? "disabled" : ""%>></td>
+				
 				</tr>
 			</table>
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input

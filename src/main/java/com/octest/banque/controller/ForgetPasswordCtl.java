@@ -23,8 +23,8 @@ import com.octest.banque.util.ServletUtility;
  * Servlet implementation class ForgetPasswordCtl
  */
 /**
- * ForgetPassword functionality Controller. Performs operation for
- * Authentication, 
+ * ForgetPassword functionality Controller
+ * 
  * 
  */
 @WebServlet(name = "ForgetPasswordCtl", urlPatterns = { "/ForgetPasswordCtl" })
@@ -36,8 +36,6 @@ public class ForgetPasswordCtl extends BaseCtl {
 	/**
 	 * Validate input Data Entered By User
 	 * 
-	 * @param request
-	 * @return
 	 */
 
 	@Override
@@ -46,18 +44,6 @@ public class ForgetPasswordCtl extends BaseCtl {
 		System.out.println("ForgetPasswordCtl validate  Method Started");
 		boolean pass = true;
 
-		// String login = request.getParameter("login");
-		//
-		// if (com.job.portal.util.DataValidator.isNull(login)) {
-		// request.setAttribute("login",
-		// PropertyReader.getValue("error.require", "Email Id"));
-		// pass = false;
-		// } else if (!DataValidator.isEmail(login)) {
-		// request.setAttribute("login",
-		// PropertyReader.getValue("error.email", "Email Id"));
-		// pass = false;
-		// }
-		// log.debug("ForgetPasswordCtl validate Method Ended");
 
 		return pass;
 	}
@@ -65,8 +51,7 @@ public class ForgetPasswordCtl extends BaseCtl {
 	/**
 	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
+	 * 
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -84,10 +69,7 @@ public class ForgetPasswordCtl extends BaseCtl {
 	/**
 	 * Contains display logic
 	 */
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("ForgetPasswordCtl Method doGet Started");
@@ -103,10 +85,7 @@ public class ForgetPasswordCtl extends BaseCtl {
 	/**
 	 * Contains submit logic
 	 */
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("ForgetPasswordCtl Method doPost Started");

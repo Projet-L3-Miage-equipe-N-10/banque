@@ -1,5 +1,5 @@
 package com.octest.banque.controller;
-
+//Définit et  Facilite l'accés aux differentes  pages
 public interface BSView {
 	
 	public String APP_CONTEXT = "/banque";
@@ -37,7 +37,16 @@ public interface BSView {
 	public String LOGIN_VIEW = PAGE_FOLDER + "/LoginView.jsp";
 	public String WELCOME_VIEW = PAGE_FOLDER + "/Welcome.jsp";
 	public String CHANGE_PASSWORD_VIEW = PAGE_FOLDER + "/ChangePasswordView.jsp";
+	
+	
+	
+	
 	public String MY_PROFILE_VIEW = PAGE_FOLDER + "/MyProfileView.jsp";
+	
+	
+	
+	
+	
 	public String FORGET_PASSWORD_VIEW = PAGE_FOLDER + "/ForgetPasswordView.jsp";
 
 	public String ERROR_CTL = "/controller/ErrorCtl";
@@ -66,6 +75,8 @@ public interface BSView {
 	public String LOGOUT_CTL = APP_CONTEXT + "/LoginCtl";
 	public String GET_MARKSHEET_CTL = APP_CONTEXT + "/controller/GetMarksheetCtl";
 	public String CHANGE_PASSWORD_CTL = APP_CONTEXT + "/controller/ChangePasswordCtl";
+	
+	
 	public String MY_PROFILE_CTL = APP_CONTEXT + "/controller/MyProfileCtl";
 	public String FORGET_PASSWORD_CTL = APP_CONTEXT + "/ForgetPasswordCtl";
 	public String MARKSHEET_MERIT_LIST_CTL = APP_CONTEXT + "/controller/MarksheetMeritListCtl";

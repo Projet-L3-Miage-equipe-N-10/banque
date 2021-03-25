@@ -1,8 +1,4 @@
 package com.octest.banque.bean;
-
-import java.sql.Timestamp;
-import java.util.Date;
-
 /**
  * Customer  JavaBean encapsulates TimeTable attributes
  * 
